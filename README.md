@@ -1,7 +1,7 @@
 # Brackeys game jam 6.
 game description placeholder*
 
-Game submission to Brackeys Game Jam 6.
+Game submission to Brackeys Game Jam 6. (Theme: *Let there be Chaos**)
 
 ## Details:
 Engine: PowerPlay Engine 1.02
