@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class MeleeSystem : MonoBehaviour
 {
     public Animator PlayerAnimator;
     public CharacterController2D Controller;
     public Rigidbody2D PlayerRB;
+    public Volume UltimateFX;
     public float AttackDuration; // Used to prevent movement while attacking.
     public Transform AttackPoint;
     public float AttackRange;
@@ -29,6 +31,14 @@ public class MeleeSystem : MonoBehaviour
             {
                 Attack(true);
             }
+        }
+
+        if (CanUltimate)
+        {
+            UltimateFX.weight = Mathf.Lerp(UltimateFX.weight, 1, 0.01f);
+        }else
+        {
+            UltimateFX.weight = Mathf.Lerp(UltimateFX.weight, 0, 0.01f);
         }
 
         attackMovementPreventionTimer -= Time.deltaTime;

@@ -14,13 +14,14 @@ public class EnemyAI : MonoBehaviour
     public void TakeDamage(MeleeSystem DamageSender)
     {
         EnemyAnimator.SetTrigger("Hurt");
-
-        int chance = Random.Range(0, 100);
-        if (chance < 30 && DamageSender != null) DamageSender.CanUltimate = true;
         
         if (Damaged == true)
         {
             EnemyAnimator.SetBool("Dead", true);
+
+            int chance = Random.Range(0, 100);
+            if (chance < 30 && DamageSender != null) DamageSender.CanUltimate = true;
+            
             BodyCollider.enabled = true;
             gameObject.layer = 0;
             gameObject.name = (gameObject.name + " (Dead)");
