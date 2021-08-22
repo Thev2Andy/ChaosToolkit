@@ -4,26 +4,27 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public CharacterController2D controller;
+    public CharacterController2D Controller;
 
     public Animator PlayerAnimator;
 
-	public float runSpeed = 40f;
+	public float RunSpeed = 40f;
 
-	float horizontalMove = 0f;
+	[HideInInspector] public float horizontalMove = 0f;
 	bool jump = false;
 	
 	// Update is called once per frame
-	void Update () {
+	private void Update ()
+    {
 
-		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+		horizontalMove = Input.GetAxisRaw("Horizontal") * RunSpeed;
 
 		if (Input.GetButtonDown("Jump"))
 		{
 			jump = true;
 		}
 
-        PlayerAnimator.SetBool("Grounded", controller.m_Grounded);
+        PlayerAnimator.SetBool("Grounded", Controller.m_Grounded);
         PlayerAnimator.SetBool("Walking", ((horizontalMove != 0) ? true : false));
 
 	}
@@ -31,7 +32,7 @@ public class Movement : MonoBehaviour
 	void FixedUpdate ()
 	{
 		// Move our character
-		controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
+		Controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
 		jump = false;
 	}
 }
