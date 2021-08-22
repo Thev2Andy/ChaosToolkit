@@ -1,5 +1,5 @@
 # Chaos Toolkit
-game description placeholder*
+Chaos Toolkit is a game about destroying cities, explosions and fast movement.
 
 Game submission to Brackeys Game Jam 6. (Theme: *Let there be Chaos**)
 
