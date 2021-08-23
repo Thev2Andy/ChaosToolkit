@@ -8,7 +8,7 @@ public class EnemyAI : MonoBehaviour
     public Collider2D EnemyCollider;
     public Collider2D BodyCollider;
 
-    // Private / Hidden variables.    
+    // Private / Hidden variables.
     [HideInInspector] public bool Damaged;
 
     public void TakeDamage(MeleeSystem DamageSender)
