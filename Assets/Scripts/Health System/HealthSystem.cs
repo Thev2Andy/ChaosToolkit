@@ -62,10 +62,5 @@ public class HealthSystem : MonoBehaviour
         {
             HurtFX.weight = Mathf.Lerp(HurtFX.weight, 0, 0.05f);
         }
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            TakeDamage();
-        }
     }
 }
