@@ -29,7 +29,7 @@ public class MeleeSystem : MonoBehaviour
                 Attack(false);
             }else if (CanUltimate)
             {
-                if (Input.GetKeyDown(KeyCode.LeftShift)) Attack(true);
+                if (Input.GetKey(KeyCode.LeftShift)) Attack(true);
             }
         }
 
