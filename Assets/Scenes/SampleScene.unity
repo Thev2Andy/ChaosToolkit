@@ -1932,7 +1932,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1724529980231915990}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2000509498
+--- !u!114 &2000509499
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2025,7 +2025,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2000509498}
+      objectReference: {fileID: 2000509499}
     - target: {fileID: 6061390717211441352, guid: c21353eafca9d3b4cbacecee2e6be6e7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -2055,7 +2055,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2000509498}
+      objectReference: {fileID: 2000509499}
     - target: {fileID: 8142477871163807269, guid: c21353eafca9d3b4cbacecee2e6be6e7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState

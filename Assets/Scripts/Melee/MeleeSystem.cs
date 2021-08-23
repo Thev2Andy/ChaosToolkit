@@ -29,16 +29,16 @@ public class MeleeSystem : MonoBehaviour
                 Attack(false);
             }else if (CanUltimate)
             {
-                Attack(true);
+                if (Input.GetKeyDown(KeyCode.LeftShift)) Attack(true);
             }
         }
 
         if (CanUltimate)
         {
-            UltimateFX.weight = Mathf.Lerp(UltimateFX.weight, 1, 0.01f);
+            UltimateFX.weight = Mathf.Lerp(UltimateFX.weight, 1, 0.02f);
         }else
         {
-            UltimateFX.weight = Mathf.Lerp(UltimateFX.weight, 0, 0.01f);
+            UltimateFX.weight = Mathf.Lerp(UltimateFX.weight, 0, 0.02f);
         }
 
         attackMovementPreventionTimer -= Time.deltaTime;
