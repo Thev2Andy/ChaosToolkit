@@ -9,7 +9,9 @@ public class MeleeSystem : MonoBehaviour
     public CharacterController2D Controller;
     public Rigidbody2D PlayerRB;
     public Movement PlayerMovement;
+    public HealthSystem HealthSys;
     public Volume UltimateFX;
+    public float UltimateChargeTime;
     public float AttackDuration; // Used to prevent movement while attacking.
     public Transform AttackPoint;
     public float AttackRange;
@@ -19,6 +21,12 @@ public class MeleeSystem : MonoBehaviour
     // Private / Hidden variables.
     private float attackMovementPreventionTimer;
     [HideInInspector] public bool CanUltimate;
+    private float ultiTimer;
+
+    private void Start()
+    {
+       ultiTimer = UltimateChargeTime * 2f;
+    }
 
     // Update is called once per frame
     private void Update()
@@ -28,9 +36,20 @@ public class MeleeSystem : MonoBehaviour
             if (Controller.m_Grounded)
             {
                 Attack(false);
-            }else if (CanUltimate)
+            }else if (CanUltimate && !HealthSys.Damaged)
             {
                 if (Input.GetKey(KeyCode.LeftShift)) Attack(true);
+            }
+        }
+
+        if (!CanUltimate)
+        {
+            ultiTimer -= Time.deltaTime;
+            if (ultiTimer < 0) ultiTimer = 0;
+            if (ultiTimer <= 0)
+            {
+                CanUltimate = true;
+                ultiTimer = UltimateChargeTime;
             }
         }
 
@@ -57,11 +76,11 @@ public class MeleeSystem : MonoBehaviour
 
     private void Attack(bool ultimate)
     {
-        PlayerAnimator.SetTrigger("Attack");
-
         if (!ultimate) attackMovementPreventionTimer = AttackDuration;
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRange * (ultimate ? UltimateRangeMultiplier : 1), AttackMask);
+
+        if (hits.Length > 0) PlayerAnimator.SetTrigger("Attack");
 
         foreach (Collider2D enemy in hits)
         {

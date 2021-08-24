@@ -870,7 +870,9 @@ MonoBehaviour:
   Controller: {fileID: 1724529979608268911}
   PlayerRB: {fileID: 1724529979608268909}
   PlayerMovement: {fileID: 1724529979608268908}
+  HealthSys: {fileID: 7521602751307068198}
   UltimateFX: {fileID: 1724529979676082245}
+  UltimateChargeTime: 30
   AttackDuration: 0.533
   AttackPoint: {fileID: 1724529979977876319}
   AttackRange: 0.75
