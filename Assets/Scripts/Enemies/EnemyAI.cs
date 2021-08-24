@@ -23,7 +23,7 @@ public class EnemyAI : MonoBehaviour
             if (chance < 30 && DamageSender != null) DamageSender.CanUltimate = true;
             
             BodyCollider.enabled = true;
-            gameObject.layer = 0;
+            gameObject.layer = 10;
             gameObject.name = (gameObject.name + " (Dead)");
             Destroy(EnemyCollider);
             Destroy(gameObject, 300f);

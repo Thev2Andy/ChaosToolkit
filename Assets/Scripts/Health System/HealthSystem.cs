@@ -28,7 +28,7 @@ public class HealthSystem : MonoBehaviour
             Dead = true;
             
             BodyCollider.enabled = true;
-            gameObject.layer = 0;
+            gameObject.layer = 10;
             gameObject.name = (gameObject.name + " (Dead)");
             
             for (int i = 0; i < PlayerColliders.Length; i++)

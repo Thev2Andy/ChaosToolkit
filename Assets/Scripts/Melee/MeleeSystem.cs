@@ -8,6 +8,7 @@ public class MeleeSystem : MonoBehaviour
     public Animator PlayerAnimator;
     public CharacterController2D Controller;
     public Rigidbody2D PlayerRB;
+    public Movement PlayerMovement;
     public Volume UltimateFX;
     public float AttackDuration; // Used to prevent movement while attacking.
     public Transform AttackPoint;
@@ -44,7 +45,14 @@ public class MeleeSystem : MonoBehaviour
         attackMovementPreventionTimer -= Time.deltaTime;
         if (attackMovementPreventionTimer < 0) attackMovementPreventionTimer = 0;
 
-        PlayerRB.simulated = ((attackMovementPreventionTimer <= 0) ? true : false);
+        if (attackMovementPreventionTimer > 0)
+        {
+            PlayerRB.velocity = new Vector2(0, PlayerRB.velocity.y);
+            PlayerMovement.enabled = false;
+        }else
+        {
+            PlayerMovement.enabled = true;
+        }
     }
 
     private void Attack(bool ultimate)
