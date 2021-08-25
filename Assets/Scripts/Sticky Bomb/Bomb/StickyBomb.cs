@@ -46,6 +46,7 @@ public class StickyBomb : MonoBehaviour
 
             if (hit.gameObject.GetComponent<EnemyAI>())
             {
+                SubtitleController.Instance.Show("boom", 1.25f);
                 hit.gameObject.GetComponent<EnemyAI>().Damaged = true;
                 hit.gameObject.GetComponent<EnemyAI>().TakeDamage(null);
             }

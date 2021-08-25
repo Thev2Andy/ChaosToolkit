@@ -108,6 +108,8 @@ public class MeleeSystem : MonoBehaviour
                         Controller.m_FacingRight = false;
                     }
 
+                    SubtitleController.Instance.Show("no one walks away", 1.75f);
+
                     PlayerRB.transform.position = enemy.gameObject.transform.position;
                     enemy.gameObject.GetComponent<EnemyAI>().Damaged = true;
                     CanUltimate = false;

@@ -42,6 +42,9 @@ public class HealthSystem : MonoBehaviour
             if (GetComponent<MeleeSystem>()) Destroy(GetComponent<MeleeSystem>());
 
             DeathUI.SetActive(true);
+        }else
+        {
+            SubtitleController.Instance.Show("ouch", 2.75f);
         }
 
         Damaged = true;
