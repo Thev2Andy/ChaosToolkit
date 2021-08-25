@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 public class HealthSystem : MonoBehaviour
 {
     public Animator PlayerAnimator;
+    public float InvulnerabilityPeriod;
     public Volume HurtFX;
     public GameObject DeathUI;
     public Collider2D[] PlayerColliders;
@@ -14,10 +15,15 @@ public class HealthSystem : MonoBehaviour
     // Private / Hidden variables.
     [HideInInspector] public bool Damaged;
     [HideInInspector] public bool Dead;
+    private float invulnerableTimer;
 
     public void TakeDamage()
     {
         if (Dead) return;
+
+        if (invulnerableTimer > 0) return;
+
+        invulnerableTimer = InvulnerabilityPeriod;
 
         if (GetComponent<Rigidbody2D>()) GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         PlayerAnimator.SetTrigger("Hurt");
@@ -57,6 +63,9 @@ public class HealthSystem : MonoBehaviour
             PlayerAnimator.SetBool("Grounded", true);
             PlayerAnimator.SetBool("Dead", true);
         }
+
+        invulnerableTimer -= Time.deltaTime;
+        if (invulnerableTimer < 0) invulnerableTimer = 0;
 
         if (Damaged)
         {

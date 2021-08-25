@@ -1102,6 +1102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerAnimator: {fileID: 1724529979608268899}
+  InvulnerabilityPeriod: 1.25
   HurtFX: {fileID: 1724529980485406632}
   DeathUI: {fileID: 5570713410807534533}
   PlayerColliders:
