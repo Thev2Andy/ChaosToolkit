@@ -6,6 +6,7 @@ using TMPro;
 public class SubtitleController : MonoBehaviour
 {
     public TMP_Text SubtitleText;
+    public HealthSystem HS;
     public static SubtitleController Instance;
 
     // Private variables...
@@ -23,7 +24,7 @@ public class SubtitleController : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer < 0) timer = 0;
 
-        if (timer <= 0) SubtitleText.text = "";
+        if (timer <= 0 || HS.Dead) SubtitleText.text = "";
     }
 
     public void Show(string text, float time)

@@ -72,6 +72,7 @@ public class EnemyAI : MonoBehaviour
             if (hostiles.gameObject.GetComponent<StickyBomb>())
             {
                 hostiles.gameObject.GetComponent<StickyBomb>().Explode();
+                EnemyAnimator.ResetTrigger("Attack");
             }
         }
         
