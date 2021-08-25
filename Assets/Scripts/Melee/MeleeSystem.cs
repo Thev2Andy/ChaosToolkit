@@ -9,6 +9,8 @@ public class MeleeSystem : MonoBehaviour
     public CharacterController2D Controller;
     public Rigidbody2D PlayerRB;
     public Movement PlayerMovement;
+    public AudioSource SwingSoundSource;
+    public AudioClip SwingSound;
     public HealthSystem HealthSys;
     public Volume UltimateFX;
     public float UltimateChargeTime;
@@ -80,7 +82,15 @@ public class MeleeSystem : MonoBehaviour
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRange * (ultimate ? UltimateRangeMultiplier : 1), AttackMask);
 
-        if (hits.Length > 0) PlayerAnimator.SetTrigger("Attack");
+        if (ultimate && hits.Length > 0)
+        {
+            PlayerAnimator.SetTrigger("Attack");
+            SwingSoundSource.PlayOneShot(SwingSound);
+        }else if (!ultimate)
+        {
+            PlayerAnimator.SetTrigger("Attack");
+            SwingSoundSource.PlayOneShot(SwingSound);
+        }
 
         foreach (Collider2D enemy in hits)
         {

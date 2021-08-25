@@ -178,5 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExplosionPrefab: {fileID: 6045321593591964378, guid: 8add9ec0a7a4a224e98f34ac1a0f280d,
     type: 3}
+  ExplosionSoundSource: {fileID: 0}
+  ExplosionSound: {fileID: 8300000, guid: e431e2193d45e4d44918b76f0eacfc9d, type: 3}
   ExplosionRange: 5
   ExplosionForce: 750

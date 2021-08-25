@@ -5,6 +5,7 @@ using UnityEngine;
 public class StickyBomb : MonoBehaviour
 {
     public GameObject ExplosionPrefab;
+    public AudioClip ExplosionSound;
     public float ExplosionRange;
     public float ExplosionForce;
 
@@ -25,6 +26,14 @@ public class StickyBomb : MonoBehaviour
     public void Explode()
     {
         Destroy(Instantiate(ExplosionPrefab, transform.position, Quaternion.identity), 1.25f);
+
+        GameObject audioSource = new GameObject();
+        audioSource.name = "ExplosionAudio";
+        AudioSource au = audioSource.AddComponent<AudioSource>();
+        au.loop = false;
+        au.volume = 0.1f;
+        au.PlayOneShot(ExplosionSound);
+        Destroy(au.gameObject, 3f);
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, ExplosionRange);
 
