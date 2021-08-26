@@ -50,6 +50,12 @@ public class StickyBomb : MonoBehaviour
                 hit.gameObject.GetComponent<EnemyAI>().Damaged = true;
                 hit.gameObject.GetComponent<EnemyAI>().TakeDamage(null);
             }
+
+            if (hit.gameObject.GetComponent<Explodable>())
+            {
+                SubtitleController.Instance.Show("comming down!", 1.25f);
+                hit.gameObject.GetComponent<Explodable>().Explode();
+            }
         }
 
         Destroy(gameObject);
