@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 1258234590}
   - component: {fileID: 1258234589}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: TooltipText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '*Tooltip sample text.*'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -536,7 +536,7 @@ RectTransform:
   m_Children:
   - {fileID: 1258234588}
   m_Father: {fileID: 5193751401508268862}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2070,8 +2070,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 8539364149854217083}
   - {fileID: 1648889917}
+  - {fileID: 8539364149854217083}
   m_Father: {fileID: 1724529979078711562}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2173,7 +2173,7 @@ RectTransform:
   - {fileID: 1551368355564184806}
   - {fileID: 3258698432839160009}
   m_Father: {fileID: 5193751401508268862}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
