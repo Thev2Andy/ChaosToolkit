@@ -62,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 9203352598519039293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.5, y: 5.5, z: 5.5}
+  m_LocalScale: {x: -5.5, y: 5.5, z: 5.5}
   m_Children:
   - {fileID: 9203352599375200503}
   - {fileID: 4853528630174583393}
@@ -153,7 +153,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -319,10 +319,10 @@ MonoBehaviour:
   SwingSound: {fileID: 8300000, guid: 812811191b4e4b447bfdd0fffbb049c9, type: 3}
   AttackPoint: {fileID: 9203352599375200503}
   AttackRange: 0.75
+  Damaged: 0
   AttackMask:
     serializedVersion: 2
     m_Bits: 2560
-  Damaged: 0
 --- !u!1 &9203352599375200502
 GameObject:
   m_ObjectHideFlags: 0

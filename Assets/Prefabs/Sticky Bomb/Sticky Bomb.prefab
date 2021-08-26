@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d22e5db4610b78b40aaeb79121f8c7f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -178,7 +178,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExplosionPrefab: {fileID: 6045321593591964378, guid: 8add9ec0a7a4a224e98f34ac1a0f280d,
     type: 3}
-  ExplosionSoundSource: {fileID: 0}
   ExplosionSound: {fileID: 8300000, guid: e431e2193d45e4d44918b76f0eacfc9d, type: 3}
   ExplosionRange: 5
   ExplosionForce: 750

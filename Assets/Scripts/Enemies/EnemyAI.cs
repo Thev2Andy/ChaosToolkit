@@ -14,10 +14,10 @@ public class EnemyAI : MonoBehaviour
     public AudioClip SwingSound;
     public Transform AttackPoint;
     public float AttackRange;
+    public bool Damaged;
     public LayerMask AttackMask;
 
     // Private / Hidden variables.
-    [HideInInspector] public bool Damaged;
     private bool attacking;
 
     public void TakeDamage(MeleeSystem DamageSender)
@@ -31,7 +31,7 @@ public class EnemyAI : MonoBehaviour
             int chance = Random.Range(0, 100);
             if (chance <= 30 && DamageSender != null) DamageSender.CanUltimate = true;
 
-            if(chance > 30 && chance <= 60)
+            if(chance > 30 && chance <= 45)
             {
                 Rigidbody2D drop = Instantiate(DeathDrop, DropPoint.position, Quaternion.identity).GetComponent<Rigidbody2D>();
                 if (drop != null)

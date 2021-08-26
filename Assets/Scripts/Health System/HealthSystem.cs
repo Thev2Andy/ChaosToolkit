@@ -7,14 +7,18 @@ public class HealthSystem : MonoBehaviour
 {
     public Animator PlayerAnimator;
     public float InvulnerabilityPeriod;
+    public float DamageDuration;
+    public Rigidbody2D PlayerRB;
+    public Movement PlayerMovement;
     public Volume HurtFX;
     public GameObject DeathUI;
     public Collider2D[] PlayerColliders;
+    public bool Damaged;
     public Collider2D BodyCollider;
 
     // Private / Hidden variables.
-    [HideInInspector] public bool Damaged;
     [HideInInspector] public bool Dead;
+    private float damageMovementPreventionTimer;
     private float invulnerableTimer;
 
     public void TakeDamage()
@@ -24,6 +28,8 @@ public class HealthSystem : MonoBehaviour
         if (invulnerableTimer > 0) return;
 
         invulnerableTimer = InvulnerabilityPeriod;
+
+        damageMovementPreventionTimer = DamageDuration;
 
         if (GetComponent<Rigidbody2D>()) GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         PlayerAnimator.SetTrigger("Hurt");
@@ -66,6 +72,18 @@ public class HealthSystem : MonoBehaviour
 
         invulnerableTimer -= Time.deltaTime;
         if (invulnerableTimer < 0) invulnerableTimer = 0;
+
+        damageMovementPreventionTimer -= Time.deltaTime;
+        if (damageMovementPreventionTimer < 0) damageMovementPreventionTimer = 0;
+
+        if (damageMovementPreventionTimer > 0)
+        {
+            PlayerRB.velocity = new Vector2(0, PlayerRB.velocity.y);
+            if(PlayerMovement != null) PlayerMovement.enabled = false;
+        }else
+        {
+            if(PlayerMovement != null) PlayerMovement.enabled = true;
+        }
 
         if (Damaged)
         {

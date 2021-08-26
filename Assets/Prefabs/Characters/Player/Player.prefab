@@ -946,7 +946,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724529979274867760}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5676961, y: 0.5000001, z: -10}
+  m_LocalPosition: {x: 0.55710965, y: 0.5000001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 414300922}
@@ -1443,6 +1443,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerAnimator: {fileID: 1724529979608268899}
   InvulnerabilityPeriod: 1.25
+  DamageDuration: 0.525
+  PlayerRB: {fileID: 1724529979608268909}
+  PlayerMovement: {fileID: 1724529979608268908}
   HurtFX: {fileID: 1724529980485406632}
   DeathUI: {fileID: 5570713410807534533}
   PlayerColliders:
@@ -1905,7 +1908,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724529981084981467}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5676961, y: 0.5000001, z: -10}
+  m_LocalPosition: {x: 0.55710965, y: 0.5000001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1724529979273889916}

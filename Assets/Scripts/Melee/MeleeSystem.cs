@@ -69,10 +69,12 @@ public class MeleeSystem : MonoBehaviour
         if (attackMovementPreventionTimer > 0)
         {
             PlayerRB.velocity = new Vector2(0, PlayerRB.velocity.y);
+            PlayerRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             PlayerMovement.enabled = false;
         }else
         {
             PlayerMovement.enabled = true;
+            PlayerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 

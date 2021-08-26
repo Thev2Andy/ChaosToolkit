@@ -53,7 +53,6 @@ public class StickyBomb : MonoBehaviour
 
             if (hit.gameObject.GetComponent<Explodable>())
             {
-                SubtitleController.Instance.Show("comming down!", 1.25f);
                 hit.gameObject.GetComponent<Explodable>().Explode();
             }
         }
