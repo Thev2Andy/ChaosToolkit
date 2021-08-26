@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7923180832256716009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4853528630174583393}
+  m_Layer: 8
+  m_Name: Drop Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4853528630174583393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7923180832256716009}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9203352598519039289}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9203352598519039293
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,10 +61,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9203352598519039293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.663, y: 0.22, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5.5, y: 5.5, z: 5.5}
   m_Children:
   - {fileID: 9203352599375200503}
+  - {fileID: 4853528630174583393}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -282,6 +313,9 @@ MonoBehaviour:
   EnemyCollider: {fileID: 9203352598519039290}
   BodyCollider: {fileID: 9203352598519039284}
   SwingSoundSource: {fileID: 9203352598519039285}
+  DeathDrop: {fileID: 2761479144192231977, guid: 37b306abad2c20f4d9c4e589d2a39160,
+    type: 3}
+  DropPoint: {fileID: 4853528630174583393}
   SwingSound: {fileID: 8300000, guid: 812811191b4e4b447bfdd0fffbb049c9, type: 3}
   AttackPoint: {fileID: 9203352599375200503}
   AttackRange: 0.75

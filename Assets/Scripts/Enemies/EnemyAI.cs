@@ -9,6 +9,8 @@ public class EnemyAI : MonoBehaviour
     public Collider2D EnemyCollider;
     public Collider2D BodyCollider;
     public AudioSource SwingSoundSource;
+    public GameObject DeathDrop;
+    public Transform DropPoint;
     public AudioClip SwingSound;
     public Transform AttackPoint;
     public float AttackRange;
@@ -27,7 +29,17 @@ public class EnemyAI : MonoBehaviour
             EnemyAnimator.SetBool("Dead", true);
 
             int chance = Random.Range(0, 100);
-            if (chance < 30 && DamageSender != null) DamageSender.CanUltimate = true;
+            if (chance <= 30 && DamageSender != null) DamageSender.CanUltimate = true;
+
+            if(chance > 30 && chance <= 60)
+            {
+                Rigidbody2D drop = Instantiate(DeathDrop, DropPoint.position, Quaternion.identity).GetComponent<Rigidbody2D>();
+                if (drop != null)
+                {
+                    drop.AddForce(new Vector2(0, 165));
+                    drop.AddTorque(Random.Range(-27.5f, 27.5f));
+                }
+            }
             
             BodyCollider.enabled = true;
             gameObject.layer = 10;
