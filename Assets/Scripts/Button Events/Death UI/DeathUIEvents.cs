@@ -7,11 +7,11 @@ public class DeathUIEvents : MonoBehaviour
 {
     public void Quit(int menuScene)
     {
-        SceneManager.LoadScene(menuScene);
+        SceneManager.LoadSceneAsync(menuScene);
     }
 
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
 }
