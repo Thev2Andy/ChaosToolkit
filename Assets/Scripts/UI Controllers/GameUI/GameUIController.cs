@@ -12,7 +12,7 @@ public class GameUIController : MonoBehaviour
 
     private void Awake()
     {
-       if (Instance != this) Destroy(Instance);
+       if (Instance != this && Instance != null) Destroy(Instance);
        Instance = this;
     }
 

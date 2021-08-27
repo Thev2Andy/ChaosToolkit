@@ -10,8 +10,8 @@ public class BackgroundController : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != this) Destroy(Instance);
         Instance = this;
+        if (Instance != this && Instance != null) Destroy(Instance);
     }
 
     public void ChangeBackground(Sprite image, Color color)
