@@ -7,6 +7,8 @@ public class HealTrigger : MonoBehaviour
     public bool OneUseOnly;
     public bool UseWhenFullHP;
 
+    public AudioClip UseSound;
+
     private void OnTriggerEnter2D(Collider2D c)
     {
         HealthSystem hs = c.gameObject.GetComponent<HealthSystem>();
@@ -15,6 +17,8 @@ public class HealTrigger : MonoBehaviour
             if (hs.Dead || hs.Damaged == false && UseWhenFullHP == false) return;
 
             hs.Damaged = false;
+
+            Camera.main.GetComponent<AudioSource>().PlayOneShot(UseSound);
 
             if (OneUseOnly) Destroy(gameObject);
         }
