@@ -1812,9 +1812,12 @@ MonoBehaviour:
     type: 3}
   LaunchForce: 1000
   StickyDelay: 0.75
+  PickupSound: {fileID: 8300000, guid: bb4f08e99e3ce5048bdde075b763ef6c, type: 3}
+  MaxStickyBombs: 15
   StickySpawnPoint: {fileID: 5957285689867072264}
   StickySpawnPointPivot: {fileID: 7956621317907947325}
   StickyInstance: {fileID: 0}
+  stickyBombs: 0
 --- !u!114 &1724529979608268907
 MonoBehaviour:
   m_ObjectHideFlags: 0

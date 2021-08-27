@@ -10,6 +10,10 @@ public class StickyLauncher : MonoBehaviour
 
     public float StickyDelay;
 
+    public AudioClip PickupSound;
+
+    public int MaxStickyBombs;
+
     public Transform StickySpawnPoint;
 
     public Transform StickySpawnPointPivot;
@@ -18,10 +22,12 @@ public class StickyLauncher : MonoBehaviour
     [HideInInspector] public GameObject StickyInstance;
     private Camera Cam;
     private float stickyTimer;
+    [HideInInspector] public int stickyBombs;
 
     private void Start()
     {
        Cam = Camera.main;
+       stickyBombs = MaxStickyBombs;
     }
 
     // Update is called once per frame
@@ -35,9 +41,10 @@ public class StickyLauncher : MonoBehaviour
         if (stickyTimer < 0) stickyTimer = 0;
         
 
-        if (Input.GetMouseButtonDown(1) && StickyInstance == null && stickyTimer <= 0 && !PauseMenu.Instance.Paused)
+        if (Input.GetMouseButtonDown(1) && StickyInstance == null && stickyTimer <= 0 && stickyBombs > 0 && !PauseMenu.Instance.Paused)
         {
             StickyInstance = Instantiate(StickyPrefab, StickySpawnPoint.position, StickySpawnPoint.rotation);
+            stickyBombs--;
             
             if (StickyInstance.GetComponent<Rigidbody2D>())
             {
@@ -46,9 +53,19 @@ public class StickyLauncher : MonoBehaviour
             }
 
             stickyTimer = StickyDelay;
-        }else if (Input.GetMouseButtonDown(1) && StickyInstance == null && stickyTimer > 0)
+        }else if (Input.GetMouseButtonDown(1) && StickyInstance == null && stickyTimer > 0 && !PauseMenu.Instance.Paused)
         {
             GameUIController.Instance.ShowMessage("Sticky bombs on cooldown.", 2.75f);
+        }else if (Input.GetMouseButtonDown(1) && StickyInstance == null && stickyTimer <= 0 && stickyBombs <= 0 && !PauseMenu.Instance.Paused)
+        {
+            GameUIController.Instance.ShowMessage("Out of sticky bombs.", 2.75f);
         }
+    }
+
+    public void Resupply()
+    {
+        stickyBombs = MaxStickyBombs;
+        GameUIController.Instance.ShowMessage("Sticky bombs restocked.", 2.75f);
+        Cam.GetComponent<AudioSource>().PlayOneShot(PickupSound);
     }
 }

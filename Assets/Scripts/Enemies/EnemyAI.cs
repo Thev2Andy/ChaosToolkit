@@ -12,7 +12,13 @@ public class EnemyAI : MonoBehaviour
     public Transform GroundCheck;
     public float GroundedRadius;
     public LayerMask GroundLayers;
-    public GameObject DeathDrop;
+    public GameObject[] DeathDrops;
+
+    [Space]
+    public GameObject GuaranteedDrop;
+    public bool GuaranteedUltimate;
+    [Space]
+
     public Transform DropPoint;
     public AudioClip SwingSound;
     public Transform AttackPoint;
@@ -34,11 +40,15 @@ public class EnemyAI : MonoBehaviour
             EnemyAnimator.SetBool("Dead", true);
 
             int chance = Random.Range(0, 100);
-            if (chance <= 30 && DamageSender != null) DamageSender.CanUltimate = true;
+            if (chance <= 30 && DamageSender != null || GuaranteedUltimate && DamageSender != null ) DamageSender.CanUltimate = true;
 
-            if(chance > 30 && chance <= 45)
+            if(chance > 30 && chance <= 45 || GuaranteedDrop != null)
             {
-                Rigidbody2D drop = Instantiate(DeathDrop, DropPoint.position, Quaternion.identity).GetComponent<Rigidbody2D>();
+                Rigidbody2D drop = null;
+
+                if (GuaranteedDrop != null) drop = Instantiate(GuaranteedDrop, DropPoint.position, Quaternion.identity).GetComponent<Rigidbody2D>();
+                if (GuaranteedDrop == null) drop = Instantiate(DeathDrops[Random.Range(0, DeathDrops.Length)], DropPoint.position, Quaternion.identity).GetComponent<Rigidbody2D>();
+
                 if (drop != null)
                 {
                     drop.AddForce(new Vector2(0, 165));

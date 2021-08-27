@@ -349,8 +349,10 @@ MonoBehaviour:
   GroundLayers:
     serializedVersion: 2
     m_Bits: 311
-  DeathDrop: {fileID: 2761479144192231977, guid: 37b306abad2c20f4d9c4e589d2a39160,
-    type: 3}
+  DeathDrops:
+  - {fileID: 2761479144192231977, guid: 37b306abad2c20f4d9c4e589d2a39160, type: 3}
+  - {fileID: 2761479144192231977, guid: 44c711d89be70fd4ebe61a30beec711e, type: 3}
+  GuaranteedDrop: {fileID: 0}
   DropPoint: {fileID: 4853528630174583393}
   SwingSound: {fileID: 8300000, guid: 812811191b4e4b447bfdd0fffbb049c9, type: 3}
   AttackPoint: {fileID: 9203352599375200503}
