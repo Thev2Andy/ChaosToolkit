@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class DeathUIEvents : MonoBehaviour
 {
-    public void Quit(int scene)
+    public void Quit(int menuScene)
     {
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(menuScene);
     }
 
     public void Retry()
