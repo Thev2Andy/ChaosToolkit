@@ -733,7 +733,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7005153550958747227}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2078865349}
+        m_MethodName: ChangeFullscreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &551186160357902170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2464,7 +2475,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6137928712030350285}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2078865349}
+        m_MethodName: ChangeGFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1920929250016785087
 GameObject:
   m_ObjectHideFlags: 0
@@ -2840,7 +2862,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4985991186992812187}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2078865348}
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3625438714598952944
 GameObject:
   m_ObjectHideFlags: 0
@@ -3151,8 +3184,8 @@ Canvas:
   m_GameObject: {fileID: 5192133728425834522}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1724529979274867774}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -3161,7 +3194,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_TargetDisplay: 0
 --- !u!114 &7123852681406012091
 MonoBehaviour:
@@ -3264,6 +3297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9098482286542133929}
   - component: {fileID: 2078865348}
+  - component: {fileID: 2078865349}
   m_Layer: 0
   m_Name: Pause UI
   m_TagString: Untagged
@@ -3308,6 +3342,21 @@ MonoBehaviour:
   OptionsUI: {fileID: 8817950262460202105}
   HS: {fileID: 7521602751307068198}
   Paused: 0
+--- !u!114 &2078865349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798726664968703007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858ab4b819bc86b45b52a617571ab784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GFXText: {fileID: 6137928712030350285}
+  FullscreenText: {fileID: 7005153550958747227}
+  SFXText: {fileID: 2470842791527746261}
 --- !u!1 &5893082336538386973
 GameObject:
   m_ObjectHideFlags: 0
@@ -4097,7 +4146,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2470842791527746261}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2078865349}
+        m_MethodName: ChangeSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8268189517776458938
 GameObject:
   m_ObjectHideFlags: 0
@@ -4274,7 +4334,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8383752377306626249}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2078865348}
+        m_MethodName: Quit
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8817950262460202105
 GameObject:
   m_ObjectHideFlags: 0

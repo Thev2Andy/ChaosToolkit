@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -662,7 +662,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 515860844}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441636652}
+        m_MethodName: ChangeSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &515860844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1414,6 +1425,7 @@ GameObject:
   - component: {fileID: 1441636648}
   - component: {fileID: 1441636647}
   - component: {fileID: 1441636651}
+  - component: {fileID: 1441636652}
   m_Layer: 5
   m_Name: UI Canvas
   m_TagString: Untagged
@@ -1514,6 +1526,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e921cdde4fbe7654395f671533ca5d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1441636652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441636646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858ab4b819bc86b45b52a617571ab784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GFXText: {fileID: 1716404579}
+  FullscreenText: {fileID: 2076161706}
+  SFXText: {fileID: 515860844}
 --- !u!1 &1488748209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,7 +1810,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1716404579}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441636652}
+        m_MethodName: ChangeGFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1716404579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2243,7 +2281,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2076161706}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441636652}
+        m_MethodName: ChangeFullscreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2076161706
 MonoBehaviour:
   m_ObjectHideFlags: 0
