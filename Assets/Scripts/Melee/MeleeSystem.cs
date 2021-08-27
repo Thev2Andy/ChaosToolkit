@@ -42,6 +42,9 @@ public class MeleeSystem : MonoBehaviour
             }else if (CanUltimate && !HealthSys.Damaged && Input.GetKey(KeyCode.LeftShift))
             {
                 Attack(true);
+            }else if(!CanUltimate && Input.GetKey(KeyCode.LeftShift))
+            {
+                GameUIController.Instance.ShowMessage("Your ulti isn't ready.", 2.75f);
             }
         }
 
