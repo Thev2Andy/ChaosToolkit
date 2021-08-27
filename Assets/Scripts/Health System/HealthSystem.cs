@@ -33,6 +33,9 @@ public class HealthSystem : MonoBehaviour
 
         if (GetComponent<Rigidbody2D>()) GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         PlayerAnimator.SetTrigger("Hurt");
+
+        MeleeSystem melee = GetComponent<MeleeSystem>();
+        if (melee != null && melee.CanUltimate) GameUIController.Instance.ShowMessage("You lost your ulti!", 2.75f);
         
         if (Damaged == true)
         {
@@ -49,9 +52,16 @@ public class HealthSystem : MonoBehaviour
             }
 
             // Add here any other components that need to be destroyed.
-            if (GetComponent<Movement>()) Destroy(GetComponent<Movement>());
+            if (PlayerMovement != null) Destroy(PlayerMovement);
             if (GetComponent<CharacterController2D>()) Destroy(GetComponent<CharacterController2D>());
-            if (GetComponent<MeleeSystem>()) Destroy(GetComponent<MeleeSystem>());
+            if (melee != null) Destroy(melee);
+
+            StickyLauncher sticky = GetComponent<StickyLauncher>();
+            if (sticky != null)
+            {
+                sticky.StickyInstance.GetComponent<StickyBomb>().Explode();
+                Destroy(sticky);
+            }
 
             DeathUI.SetActive(true);
         }else

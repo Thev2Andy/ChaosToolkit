@@ -24,6 +24,7 @@ public class MeleeSystem : MonoBehaviour
     private float attackMovementPreventionTimer;
     [HideInInspector] public bool CanUltimate;
     private float ultiTimer;
+    private bool lastUltiValue;
 
     private void Start()
     {
@@ -38,10 +39,15 @@ public class MeleeSystem : MonoBehaviour
             if (Controller.m_Grounded)
             {
                 Attack(false);
-            }else if (CanUltimate && !HealthSys.Damaged)
+            }else if (CanUltimate && !HealthSys.Damaged && Input.GetKey(KeyCode.LeftShift))
             {
-                if (Input.GetKey(KeyCode.LeftShift)) Attack(true);
+                Attack(true);
             }
+        }
+
+        if(!lastUltiValue && CanUltimate)
+        {
+            GameUIController.Instance.ShowMessage("Your ulti is ready.", 2.75f);
         }
 
         if (!CanUltimate)
@@ -76,6 +82,8 @@ public class MeleeSystem : MonoBehaviour
             PlayerMovement.enabled = true;
             PlayerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
+
+        lastUltiValue = CanUltimate;
     }
 
     private void Attack(bool ultimate)

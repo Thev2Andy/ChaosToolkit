@@ -46,6 +46,9 @@ public class StickyLauncher : MonoBehaviour
             }
 
             stickyTimer = StickyDelay;
+        }else if (Input.GetMouseButtonDown(1) && StickyInstance == null && stickyTimer > 0)
+        {
+            GameUIController.Instance.ShowMessage("Sticky bombs on cooldown.", 2.75f);
         }
     }
 }
