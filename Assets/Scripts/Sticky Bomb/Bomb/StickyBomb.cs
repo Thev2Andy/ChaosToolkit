@@ -9,8 +9,6 @@ public class StickyBomb : MonoBehaviour
     public float ExplosionRange;
     public float ExplosionForce;
 
-    [HideInInspector] public StickyLauncher Launcher;
-
     private void OnCollisionEnter2D(Collision2D c)
     {
         if (GetComponent<Rigidbody2D>())
@@ -50,7 +48,7 @@ public class StickyBomb : MonoBehaviour
             {
                 SubtitleController.Instance.Show("gotcha", 1.25f);
                 hit.gameObject.GetComponent<EnemyAI>().Damaged = true;
-                hit.gameObject.GetComponent<EnemyAI>().TakeDamage(Launcher.GetComponent<MeleeSystem>());
+                hit.gameObject.GetComponent<EnemyAI>().TakeDamage(null);
             }
 
             if (hit.gameObject.GetComponent<Explodable>())

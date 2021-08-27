@@ -1812,6 +1812,7 @@ MonoBehaviour:
     type: 3}
   LaunchForce: 1000
   StickyDelay: 0.75
+  Melee: {fileID: 1724529979608268907}
   PickupSound: {fileID: 8300000, guid: bb4f08e99e3ce5048bdde075b763ef6c, type: 3}
   MaxStickyBombs: 15
   StickySpawnPoint: {fileID: 5957285689867072264}
