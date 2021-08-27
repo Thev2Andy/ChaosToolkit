@@ -9,6 +9,9 @@ public class EnemyAI : MonoBehaviour
     public Collider2D EnemyCollider;
     public Collider2D BodyCollider;
     public AudioSource SwingSoundSource;
+    public Transform GroundCheck;
+    public float GroundedRadius;
+    public LayerMask GroundLayers;
     public GameObject DeathDrop;
     public Transform DropPoint;
     public AudioClip SwingSound;
@@ -19,9 +22,11 @@ public class EnemyAI : MonoBehaviour
 
     // Private / Hidden variables.
     private bool attacking;
+    [HideInInspector] public bool Grounded;
 
     public void TakeDamage(MeleeSystem DamageSender)
     {
+        EnemyAnimator.ResetTrigger("Attack");
         EnemyAnimator.SetTrigger("Hurt");
         
         if (Damaged == true)
@@ -56,7 +61,9 @@ public class EnemyAI : MonoBehaviour
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRange, AttackMask);
         hits = hits.Distinct().Cast<Collider2D>().ToArray();
-        if (hits.Length > 0 && !attacking) StartCoroutine(Attack());
+        if (hits.Length > 0 && !attacking && Grounded) StartCoroutine(Attack());
+
+        EnemyAnimator.SetBool("Grounded", Grounded);
     }
 
     private IEnumerator Attack()
@@ -91,8 +98,22 @@ public class EnemyAI : MonoBehaviour
         attacking = false;
     }
 
+    private void FixedUpdate()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(GroundCheck.position, GroundedRadius, GroundLayers);
+        for (int i = 0; i < colliders.Length; i++)
+		{
+			if (colliders[i].gameObject != gameObject)
+			{
+				Grounded = true;
+			}
+		}
+    }
+
     private void OnDrawGizmosSelected()
     {
         if(AttackPoint != null && AttackRange > 0) Gizmos.DrawWireSphere(AttackPoint.position, AttackRange);
+
+        if(GroundCheck != null && GroundedRadius > 0) Gizmos.DrawWireSphere(GroundCheck.position, GroundedRadius);
     }
 }

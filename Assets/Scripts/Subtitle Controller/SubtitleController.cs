@@ -29,7 +29,7 @@ public class SubtitleController : MonoBehaviour
 
     public void Show(string text, float time)
     {
-        if(HS.Dead) return;
+        if(HS.Dead || PauseMenu.Instance.Paused) return;
 
         SubtitleText.text = text;
         timer = time;

@@ -35,7 +35,7 @@ public class StickyLauncher : MonoBehaviour
         if (stickyTimer < 0) stickyTimer = 0;
         
 
-        if (Input.GetMouseButtonDown(1) && StickyInstance == null && stickyTimer <= 0)
+        if (Input.GetMouseButtonDown(1) && StickyInstance == null && stickyTimer <= 0 && !PauseMenu.Instance.Paused)
         {
             StickyInstance = Instantiate(StickyPrefab, StickySpawnPoint.position, StickySpawnPoint.rotation);
             

@@ -9,6 +9,7 @@ public class MeleeSystem : MonoBehaviour
     public CharacterController2D Controller;
     public Rigidbody2D PlayerRB;
     public Movement PlayerMovement;
+    public HealthSystem HS;
     public AudioSource SwingSoundSource;
     public AudioClip SwingSound;
     public HealthSystem HealthSys;
@@ -34,7 +35,7 @@ public class MeleeSystem : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !PauseMenu.Instance.Paused)
         {
             if (Controller.m_Grounded)
             {
@@ -48,7 +49,7 @@ public class MeleeSystem : MonoBehaviour
             }
         }
 
-        if(!lastUltiValue && CanUltimate)
+        if(!lastUltiValue && CanUltimate && HS.Damaged == false)
         {
             GameUIController.Instance.ShowMessage("Your ulti is ready.", 2.75f);
         }

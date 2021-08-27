@@ -23,9 +23,7 @@ public class HealthSystem : MonoBehaviour
 
     public void TakeDamage()
     {
-        if (Dead) return;
-
-        if (invulnerableTimer > 0) return;
+        if (Dead || invulnerableTimer > 0 || PauseMenu.Instance.Paused) return;
 
         invulnerableTimer = InvulnerabilityPeriod;
 
@@ -35,7 +33,11 @@ public class HealthSystem : MonoBehaviour
         PlayerAnimator.SetTrigger("Hurt");
 
         MeleeSystem melee = GetComponent<MeleeSystem>();
-        if (melee != null && melee.CanUltimate) GameUIController.Instance.ShowMessage("You lost your ulti!", 2.75f);
+        if (melee != null && melee.CanUltimate)
+        {
+            GameUIController.Instance.ShowMessage("You lost your ulti!", 2.75f);
+            melee.CanUltimate = false;
+        }
         
         if (Damaged == true)
         {
@@ -59,7 +61,7 @@ public class HealthSystem : MonoBehaviour
             StickyLauncher sticky = GetComponent<StickyLauncher>();
             if (sticky != null)
             {
-                sticky.StickyInstance.GetComponent<StickyBomb>().Explode();
+                if(sticky.StickyInstance != null && sticky.StickyInstance.GetComponent<StickyBomb>()) sticky.StickyInstance.GetComponent<StickyBomb>().Explode();
                 Destroy(sticky);
             }
 
