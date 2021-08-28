@@ -9,7 +9,7 @@ Engine: Unity 2019.4.29f1
 Render Pipeline: Universal RP, 2D Renderer.
 
 ## Sceenshots:
-![](https://user-images.githubusercontent.com/85254326/130951416-b2228eb0-d5f3-4c64-8a59-bb4a6e54c8ff.png)
+![](https://user-images.githubusercontent.com/85254326/131215416-c0901bd7-bb0e-4da9-8af7-a63a4aad6495.png)
 ![](https://user-images.githubusercontent.com/85254326/130951486-74029031-b7c6-4613-9c94-20caa9371e4d.png)
 
 
