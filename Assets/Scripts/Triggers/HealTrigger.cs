@@ -18,7 +18,7 @@ public class HealTrigger : MonoBehaviour
 
             hs.Damaged = false;
 
-            Camera.main.GetComponent<AudioSource>().PlayOneShot(UseSound);
+            if(UseSound != null) Camera.main.GetComponent<AudioSource>().PlayOneShot(UseSound);
 
             if (OneUseOnly) Destroy(gameObject);
         }
