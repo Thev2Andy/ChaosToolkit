@@ -92,7 +92,7 @@ Transform:
   m_GameObject: {fileID: 9203352598519039293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -5.5, y: 5.5, z: 5.5}
+  m_LocalScale: {x: 5.5, y: 5.5, z: 5.5}
   m_Children:
   - {fileID: 9203352599375200503}
   - {fileID: 508328359}
@@ -353,6 +353,7 @@ MonoBehaviour:
   - {fileID: 2761479144192231977, guid: 37b306abad2c20f4d9c4e589d2a39160, type: 3}
   - {fileID: 2761479144192231977, guid: 44c711d89be70fd4ebe61a30beec711e, type: 3}
   GuaranteedDrop: {fileID: 0}
+  GuaranteedUltimate: 0
   DropPoint: {fileID: 4853528630174583393}
   SwingSound: {fileID: 8300000, guid: 812811191b4e4b447bfdd0fffbb049c9, type: 3}
   AttackPoint: {fileID: 9203352599375200503}

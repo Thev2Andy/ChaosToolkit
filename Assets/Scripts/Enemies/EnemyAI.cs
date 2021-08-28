@@ -15,6 +15,7 @@ public class EnemyAI : MonoBehaviour
     public GameObject[] DeathDrops;
 
     [Space]
+    public bool DisableDrops;
     public GameObject GuaranteedDrop;
     public bool GuaranteedUltimate;
     [Space]
@@ -46,8 +47,11 @@ public class EnemyAI : MonoBehaviour
             {
                 Rigidbody2D drop = null;
 
-                if (GuaranteedDrop != null) drop = Instantiate(GuaranteedDrop, DropPoint.position, Quaternion.identity).GetComponent<Rigidbody2D>();
-                if (GuaranteedDrop == null) drop = Instantiate(DeathDrops[Random.Range(0, DeathDrops.Length)], DropPoint.position, Quaternion.identity).GetComponent<Rigidbody2D>();
+                if(!DisableDrops)
+                {
+                    if (GuaranteedDrop != null) drop = Instantiate(GuaranteedDrop, DropPoint.position, Quaternion.identity).GetComponent<Rigidbody2D>();
+                    if (GuaranteedDrop == null) drop = Instantiate(DeathDrops[Random.Range(0, DeathDrops.Length)], DropPoint.position, Quaternion.identity).GetComponent<Rigidbody2D>();
+                }
 
                 if (drop != null)
                 {

@@ -6,8 +6,9 @@ public class StickyResupplyTrigger : MonoBehaviour
 {
     public bool OneUseOnly;
     public bool UseWhenFull;
+    public bool SilentResupply;
 
-    private void OnTriggerEnter2D(Collider2D c)
+    private void OnTriggerStay2D(Collider2D c)
     {
         HealthSystem hs = c.gameObject.GetComponent<HealthSystem>();
         StickyLauncher sticky = c.gameObject.GetComponent<StickyLauncher>();
@@ -15,7 +16,7 @@ public class StickyResupplyTrigger : MonoBehaviour
         {
             if (hs.Dead || sticky.stickyBombs == sticky.MaxStickyBombs && UseWhenFull == false) return;
 
-            sticky.Resupply();
+            sticky.Resupply(SilentResupply);
 
             if (OneUseOnly) Destroy(gameObject);
         }

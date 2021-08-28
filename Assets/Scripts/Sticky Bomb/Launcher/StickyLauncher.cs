@@ -27,7 +27,6 @@ public class StickyLauncher : MonoBehaviour
     private void Start()
     {
        Cam = Camera.main;
-       stickyBombs = MaxStickyBombs;
     }
 
     // Update is called once per frame
@@ -62,10 +61,13 @@ public class StickyLauncher : MonoBehaviour
         }
     }
 
-    public void Resupply()
+    public void Resupply(bool silent)
     {
         stickyBombs = MaxStickyBombs;
-        GameUIController.Instance.ShowMessage("Sticky bombs restocked.", 2.75f);
-        Cam.GetComponent<AudioSource>().PlayOneShot(PickupSound);
+        if(!silent)
+        {
+            GameUIController.Instance.ShowMessage("Sticky bombs restocked.", 2.75f);
+            Cam.GetComponent<AudioSource>().PlayOneShot(PickupSound);
+        }
     }
 }
