@@ -1,7 +1,31 @@
 fileFormatVersion: 2
-guid: b16ae0d51a5013e4eb0ea3c326818095
+guid: 1b6fe870293cabc46add3b38eb8f6e9c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2748548863627874681
+    second: BuildingSheet Nighttime_1
+  - first:
+      213: -8184515829829618973
+    second: BuildingSheet Nighttime_2
+  - first:
+      213: -1253190176114715950
+    second: BuildingSheet Nighttime_3
+  - first:
+      213: 8563626262587932529
+    second: BuildingSheet Nighttime_4
+  - first:
+      213: -6414899510730858210
+    second: BuildingSheet Nighttime_5
+  - first:
+      213: 7763670264567955528
+    second: BuildingSheet Nighttime_6
+  - first:
+      213: -6948477228246307209
+    second: BuildingSheet Nighttime_7
+  - first:
+      213: 8205264497157871459
+    second: BuildingSheet Nighttime_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,7 +133,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BuildingSheet Nighttime_1
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 0
+        width: 120
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78e28a7fe513bd9d0800000000000000
+      internalID: -2748548863627874681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingSheet Nighttime_2
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 120
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e2b1785732ca6e80800000000000000
+      internalID: -8184515829829618973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingSheet Nighttime_3
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 0
+        width: 56
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d25cacac26cb9ee0800000000000000
+      internalID: -1253190176114715950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingSheet Nighttime_4
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 0
+        width: 88
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f72cab6bc18d670800000000000000
+      internalID: 8563626262587932529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingSheet Nighttime_5
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 0
+        width: 128
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e116f01f1e2b9f6a0800000000000000
+      internalID: -6414899510730858210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingSheet Nighttime_6
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 0
+        width: 72
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84006d0d8f81ebb60800000000000000
+      internalID: 7763670264567955528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingSheet Nighttime_7
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 0
+        width: 96
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77eec7886cc029f90800000000000000
+      internalID: -6948477228246307209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingSheet Nighttime_8
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 0
+        width: 128
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36718393694fed170800000000000000
+      internalID: 8205264497157871459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

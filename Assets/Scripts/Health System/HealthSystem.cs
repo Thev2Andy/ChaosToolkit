@@ -58,8 +58,6 @@ public class HealthSystem : MonoBehaviour
             if (GetComponent<CharacterController2D>()) Destroy(GetComponent<CharacterController2D>());
             if (melee != null) Destroy(melee);
 
-            SoundtrackController.Instance.StopSoundtrack();
-
             StickyLauncher sticky = GetComponent<StickyLauncher>();
             if (sticky != null)
             {
