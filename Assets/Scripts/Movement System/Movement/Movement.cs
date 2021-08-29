@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * RunSpeed;
 
-		if (Input.GetButtonDown("Jump"))
+		if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
 		{
 			jump = true;
 		}
