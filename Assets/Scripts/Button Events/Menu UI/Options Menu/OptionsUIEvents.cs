@@ -35,7 +35,7 @@ public class OptionsUIEvents : MonoBehaviour
     public void ChangeFullscreen()
     {
         Screen.fullScreen = !Screen.fullScreen;
-        FullscreenText.text = ("Fullscreen: " + (Screen.fullScreen ? "On" : "Off"));
+        FullscreenText.text = ("Fullscreen: " + (!Screen.fullScreen ? "On" : "Off"));
     }
 
     public void ChangeSFX()
