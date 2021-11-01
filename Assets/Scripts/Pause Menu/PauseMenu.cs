@@ -59,4 +59,8 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadSceneAsync(scene);
     }
 
+    private void OnDisable() {
+        Resume();
+    }
+
 }
